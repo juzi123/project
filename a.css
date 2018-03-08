@@ -30,23 +30,23 @@ a {
 }
 
 nav > ul {
-    padding: 0;
+    padding: 9px 9px;
     margin: 0;
 }
 
 nav > ul > li {
     float: left; 
     display: block;
-    padding-top: 7px;
     margin-left: 16px;
     margin-right: 16px;
 }
 nav > ul > li > a {
     color: #b7b7b7;
     font-size: 12px;
+    border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     padding-bottom: 5px;
-
+    padding-top:5px;
 }
 nav > ul > li > a:hover {
     border-bottom: 3px solid #E06567;
