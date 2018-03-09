@@ -1,7 +1,11 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #EFEFEF;
+    color: black;
     margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 .clearfix::after{    
     content: '';    
@@ -15,25 +19,21 @@ body {
 }
 .rs {
     color: #E6686A;
-    padding-right: 3px;
+    padding-right: 4px;
 }
 .card {
     color: #9A9DA2;
 }
+.topDiv {
+    width: 100%;
+    position: fixed;
+}
 .topNavBar {
-    padding: 20px 16px 20px 16px;
+    padding:10px 16px 10px 16px;
 }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 nav > ul {
     padding: 9px 9px;
-    margin: 0;
 }
-
 nav > ul > li {
     float: left; 
     display: block;
@@ -50,4 +50,93 @@ nav > ul > li > a {
 }
 nav > ul > li > a:hover {
     border-bottom: 3px solid #E06567;
+}
+.bgPhoto {
+    height: 515px;
+    background-image: url(./img/rs-cover.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.bgPhoto .bgColor {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 515px;
+}
+.avatar {
+    padding:50px 0px 0px 50px;
+    float: left;
+}
+
+.logoHello {
+    background: #E6686A;
+    color: white;
+    display: inline-block;
+    padding: 4px 16px;
+    margin-top: 50px;
+    position: relative;
+}
+.triangle {
+    border: 5px transparent solid;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: -8px;
+    border-top-color: #E6686A;
+    border-left-color: #E6686A;
+}
+.mesCard {
+    background-color: white;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.message {
+    float: left;
+    padding-left: 65px;
+    width: 470px;
+}
+.message h1 {
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+.message p {
+    margin: 0px;
+}
+.message hr {
+    margin: 22px 0px 28px 0px;
+}
+.message dl dt {
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+.message dl dd {
+    float: left;
+    width: 70%;
+    margin: 0px;
+    padding: 5px 0px;
+    color: #9da0a7;
+}
+.mesCard footer{
+    background-color: #E6686A;
+    text-align: center;
+}
+.mesCard svg {
+    width: 30px;
+    height: 30px; 
+    fill: white;
+    vertical-align: top;
+}
+.mesCard > footer > a {
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    border-radius: 50%;
+    margin: 16px 32px;
+  }
+.mesCard > footer > a:hover {
+    background-color: #CF5D5F;
 }
