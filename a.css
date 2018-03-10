@@ -90,6 +90,7 @@ nav > ul > li > a:hover {
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -200px;
 }
 .message {
     float: left;
@@ -139,4 +140,9 @@ nav > ul > li > a:hover {
   }
 .mesCard > footer > a:hover {
     background-color: #CF5D5F;
+}
+
+.introduction{
+    border: chartreuse 1px solid;
+    color: red;
 }
