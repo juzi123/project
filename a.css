@@ -229,8 +229,7 @@ nav > ul > li > a:hover {
     color: #3d4451;
 }
 .workSection > nav{
-    display: inline-block;
-    border: 1px green solid;
+    width: 235px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 32px
@@ -241,8 +240,42 @@ nav > ul > li > a:hover {
 .workList > li{
     float: left;
     padding-left: 40px;
+    cursor: pointer;
 }
-
 .workList >  li:first-child{
     padding-left: 0px;
+}
+.bar{
+    width: 235px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: white;
+    margin: 7px auto 28px;
+}
+.bar-inner{
+    height: 6px;
+    border-radius: 2px;
+    background-color: #E6686A;
+    transition: all 0.3s;
+}
+.workPic{
+    margin:0 auto;
+    height: 597px;
+    width: 945px;
+    position: relative;
+}
+.workPic > div{
+    position: absolute;
+}
+.bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 50px;
+}
+.bar.state-2 .bar-inner{
+    margin-left: 65px;
+    width: 50px;
+}
+.bar.state-3 .bar-inner{
+    margin-left: 140px;
+    width: 96px;
 }
