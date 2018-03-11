@@ -259,7 +259,8 @@ nav > ul > li > a:hover {
     transition: all 0.3s;
 }
 .workPic{
-    margin:0 auto 30px;
+    margin:0 auto;
+    padding-bottom: 30px;
     height: 597px;
     width: 945px;
     position: relative;
