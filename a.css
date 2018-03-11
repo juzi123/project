@@ -1,7 +1,14 @@
 body {
     background-color: #EFEFEF;
     color: black;
+}
+* {
     margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4{
+    font-weight: normal;
+
 }
 a {
     text-decoration: none;
@@ -14,7 +21,7 @@ a {
 }
 .logo {
     font-size: 24px;
-    padding: 3px 4px;
+    padding: 11px 4px;
     font-family: 'Arial Black';
 }
 .rs {
@@ -29,10 +36,10 @@ a {
     position: fixed;
 }
 .topNavBar {
-    padding:10px 16px 10px 16px;
+    padding: 10px 16px 10px 16px;
 }
 nav > ul {
-    padding: 9px 9px;
+    padding: 19px 10px;
 }
 nav > ul > li {
     float: left; 
@@ -43,6 +50,7 @@ nav > ul > li {
 nav > ul > li > a {
     color: #b7b7b7;
     font-size: 12px;
+    font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     padding-bottom: 5px;
@@ -90,7 +98,8 @@ nav > ul > li > a:hover {
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -200px;
+    margin-top: -345px;
+    box-shadow: 0px 1px 10px 1px rgba(168,168,168,0.8);
 }
 .message {
     float: left;
@@ -98,12 +107,10 @@ nav > ul > li > a:hover {
     width: 470px;
 }
 .message h1 {
-    padding-top: 8px;
+    padding-top: 27px;
     margin-bottom: 8px;
 }
-.message p {
-    margin: 0px;
-}
+
 .message hr {
     margin: 22px 0px 28px 0px;
 }
@@ -111,16 +118,18 @@ nav > ul > li > a:hover {
     float: left;
     width: 30%;
     font-weight: bold;
-    padding: 5px 0px;
+    padding: 7px 0px;
 }
 .message dl dd {
     float: left;
     width: 70%;
     margin: 0px;
-    padding: 5px 0px;
+    padding: 7px 0px;
     color: #9da0a7;
 }
 .mesCard footer{
+    margin-top: 40px;
+    padding: 7px 0px;
     background-color: #E6686A;
     text-align: center;
 }
@@ -142,7 +151,98 @@ nav > ul > li > a:hover {
     background-color: #CF5D5F;
 }
 
+.pdf{
+    text-align: center;   
+}
+.dPdf{
+    font-size: 14px;
+    color: #3d4451;
+    line-height: 16px;
+    padding: 22px 55px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 30px 0;
+    font-weight: bold;
+    border: 1px solid #CDCFD1;
+    transition: box-shadow 0.2s;
+}
+.dPdf:hover{
+    box-shadow: 0px 7px 20px -4px rgba(158,158,158,1);
+}
 .introduction{
-    border: chartreuse 1px solid;
-    color: red;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 4px;
+}
+
+.skillSection{
+    padding-top: 60px;
+}
+
+.skills{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    color: #3d4451;
+}
+.skillList{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 840px;
+    background-color: white;
+    list-style: none;
+    padding: 40px 50px 0;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+.skillList > li {
+    box-sizing: border-box;
+    width: 48%;
+}
+
+.progressBar{
+    height: 6px;
+    border-radius: 2px;
+    background-color: #FAE1E1;
+    margin: 4px 0px 40px 0px;
+}
+.progress{
+    height: 6px;
+    border-radius: 2px;
+    background-color: #E6686A;
+}
+
+.skillList > li:nth-child(odd){
+    float: left;
+}
+.skillList > li:nth-child(even){
+    float: right;
+}
+.workSection {
+    padding-top: 60px;
+}
+.works{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    color: #3d4451;
+}
+.workSection > nav{
+    display: inline-block;
+    border: 1px green solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px
+}
+.workList{
+    list-style: none;
+}
+.workList > li{
+    float: left;
+    padding-left: 40px;
+}
+
+.workList >  li:first-child{
+    padding-left: 0px;
 }
