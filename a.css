@@ -34,9 +34,19 @@ a {
 .topDiv {
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 .topNavBar {
     padding: 10px 16px 10px 16px;
+    transition: all 0.5s;
+    color: #b7b7b7;
+}
+
+.topNavBar.sticky {
+    background: white;
+    color: #3d4451;
+    padding: 3px 16px 3px 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 nav > ul {
     padding: 19px 10px;
@@ -44,20 +54,66 @@ nav > ul {
 nav > ul > li {
     float: left; 
     display: block;
+    position: relative;
     margin-left: 16px;
     margin-right: 16px;
 }
 nav > ul > li > a {
-    color: #b7b7b7;
+    color: inherit;
     font-size: 12px;
     font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     padding-bottom: 5px;
-    padding-top:5px;
+    padding-top: 5px;
+    position: relative;
 }
-nav > ul > li > a:hover {
-    border-bottom: 3px solid #E06567;
+nav > ul > li.active > a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #e06567;
+    height: 3px;
+    animation: menuSlide 0.3s;
+}
+@keyframes menuSlide{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.submenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-top: 7px; 
+    top: 100%;
+}
+.submenu > li{
+    white-space: nowrap;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.topDiv li.active >.submenu{
+    list-style: none;
+    display: block;
+    background: white;
+    color: #3d4451;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+    0%{
+        margin-right: 100%; 
+    }
+    100%{
+        margin-right: 0%;
+    }
 }
 .bgPhoto {
     height: 515px;
@@ -77,19 +133,15 @@ nav > ul > li > a:hover {
 .logoHello {
     background: #E6686A;
     color: white;
-    display: inline-block;
-    padding: 4px 16px;
+    width: 40px;
+    padding: 4px 15px;
     margin-top: 50px;
-    position: relative;
 }
 .triangle {
     border: 5px transparent solid;
     width: 0px;
     height: 0px;
-    position: absolute;
-    display: inline-block;
-    margin-top: 3px;
-    margin-left: -8px;
+    margin-left: 10px; 
     border-top-color: #E6686A;
     border-left-color: #E6686A;
 }
@@ -176,7 +228,7 @@ nav > ul > li > a:hover {
 }
 
 .skillSection{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .skills{
@@ -220,7 +272,7 @@ nav > ul > li > a:hover {
     float: right;
 }
 .workSection {
-    padding-top: 60px;
+    margin-top: 60px;
 }
 .works{
     text-align: center;

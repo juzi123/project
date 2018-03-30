@@ -12,20 +12,86 @@
            fill: currentColor;
            overflow: hidden;
         }
+        .site-welcome {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #888;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+        }
+        .site-welcome.active{
+            display: flex;
+        }
+        .loading{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .loading::before,.loading::after{
+            content:'';
+            position: absolute;
+            background: black;
+            width: 0;
+            height: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 50%;
+            animation: s 1.2s linear infinite;
+        }
+        .loading::after{
+            animation-delay: 0.6s;
+        }
+        @keyframes s{
+            0%{
+                width: 0;
+                height: 0;
+                opacity: 0.7;
+            }
+            100%{
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="topDiv">
-        <div class="topNavBar clearfix">
+    <div id="loading" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
+    <div id="topDiv" class="topDiv">
+        <div id="topNavBar" class="topNavBar clearfix">
             <a class="logo" href="#" alt="logo" style="float:left">
                 <span class="rs">RS</span><span class="card">card</span>
             </a>
-            <nav style="float:right">
+            <nav class="menu" style="float:right">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
+                    <li><a href="#siteAbout">关于</a></li>
+                    <li><a href="#siteSkills">技能</a></li>
+                    <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="submenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
                     <li><a href="#">日历</a></li>
                     <li><a href="#">联系方式</a></li>
                     <li><a href="#">其他</a></li>
@@ -37,15 +103,14 @@
         <div class="bgColor"></div>
     </div>
     <main>
-        <div class="mesCard">
+        <div id="siteAbout" class="mesCard">
             <div class="clearfix">
                 <div class="avatar">
                     <img src="./img/avatar.jpg" alt="头像">
                 </div>
                 <div class="message">
-                    <span class="logoHello">Hello
-                        <span class="triangle"></span>
-                    </span>
+                    <div class="logoHello">Hello</div>
+                    <div class="triangle"></div>
                     
                     <h1>方应杭</h1>
                     <p>前端开发工程师</p><hr>
@@ -97,7 +162,7 @@
             技能：前端开发，Rails开发，Node.js开发
         </p>
     </main>
-    <section class="skillSection"> 
+    <section id="siteSkills" class="skillSection"> 
         <h2 class="skills">技能</h2>
         <ol class="skillList clearfix">
             <li>
@@ -138,7 +203,7 @@
             </li>
         </ol>
     </section>
-    <section class="workSection"> 
+    <section id="siteWorks" class="workSection"> 
         <h2 class="works">作品集</h2>
         <nav>
             <ol class="workList clearfix">
@@ -173,5 +238,39 @@
             </div>
         </div>
     </section>
+    <script>
+        setTimeout(function(){
+            loading.classList.remove('active')
+        },1000)
+        //窗口滚动
+        window.onscroll = function(){
+            if(scrollY>0){
+                topNavBar.classList.add('sticky')
+            }else{
+                topNavBar.classList.remove('sticky')
+            }
+        }
+        let liTags = document.querySelectorAll('nav.menu > ul > li')
+        for(let i=0; i<liTags.length; i++){
+            liTags[i].onmouseenter = function(x){
+                x.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function(x){
+                x.currentTarget.classList.remove('active')
+            }
+        }
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        console.log(aTags)
+        for(let i=0; i<aTags.length; i++){
+            aTags[i].onclick = function(x){
+                x.preventDefault()
+                let a = x.currentTarget
+                let href = a.getAttribute('href')                
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                window.scrollTo(0, top - 80)
+            }
+        }
+    </script>
 </body>
 </html>
