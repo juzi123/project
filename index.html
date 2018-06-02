@@ -1,68 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>方方的个人简历</title>
+    <title>juzi的个人简历</title>
     <link rel="stylesheet" href="./a.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.2/css/swiper.min.css">
     <script src="//at.alicdn.com/t/font_586134_69dyrnwsjug14i.js"></script>
-    <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
-        .site-welcome {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #888;
-            z-index: 1;
-            justify-content: center;
-            align-items: center;
-        }
-        .site-welcome.active{
-            display: flex;
-        }
-        .loading{
-            width: 200px;
-            height: 200px;
-            position: relative;
-        }
-        .loading::before,.loading::after{
-            content:'';
-            position: absolute;
-            background: black;
-            width: 0;
-            height: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            border-radius: 50%;
-            animation: s 1.2s linear infinite;
-        }
-        .loading::after{
-            animation-delay: 0.6s;
-        }
-        @keyframes s{
-            0%{
-                width: 0;
-                height: 0;
-                opacity: 0.7;
-            }
-            100%{
-                width: 100px;
-                height: 100px;
-                opacity: 0;
-            }
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div id="loading" class="site-welcome active">
         <div class="loading"></div>
@@ -70,12 +17,17 @@
     <div id="topDiv" class="topDiv">
         <div id="topNavBar" class="topNavBar clearfix">
             <a class="logo" href="#" alt="logo" style="float:left">
-                <span class="rs">RS</span><span class="card">card</span>
+                <span class="rs">RS</span>
+                <span class="card">card</span>
             </a>
             <nav class="menu" style="float:right">
                 <ul class="clearfix">
-                    <li><a href="#siteAbout">关于</a></li>
-                    <li><a href="#siteSkills">技能</a></li>
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
                     <li>
                         <a href="#siteWorks">作品</a>
                         <ul class="submenu">
@@ -92,9 +44,15 @@
                             <li>博客3</li>
                         </ul>
                     </li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">其他</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -111,19 +69,20 @@
                 <div class="message">
                     <div class="logoHello">Hello</div>
                     <div class="triangle"></div>
-                    
-                    <h1>方应杭</h1>
-                    <p>前端开发工程师</p><hr>
+
+                    <h1>juzi</h1>
+                    <p>前端开发工程师</p>
+                    <hr>
                     <dl>
                         <dt>年龄</dt>
                         <dd>18</dd>
                         <dt>所在城市</dt>
                         <dd>北京</dd>
                         <dt>邮箱</dt>
-                        <dd>fangyinghang@foxmail.com</dd>
+                        <dd>12345@foxmail.com</dd>
                         <dt>手机</dt>
                         <dd>123445512</dd>
-                    </dl>        
+                    </dl>
                 </div>
             </div>
             <footer>
@@ -158,11 +117,11 @@
             <a href="./1.pdf" class="button dPdf" download>下载 PDF 简历</a>
         </p>
         <p class="introduction">
-            方应杭，资深前端工程师，资深前端讲师，现在在饥人谷教前端课程。<br>
-            技能：前端开发，Rails开发，Node.js开发
+            juzi，学生
+            <br> 技能：前端开发，玩游戏
         </p>
     </main>
-    <section data-x id="siteSkills" class="skillSection"> 
+    <section data-x id="siteSkills" class="skillSection">
         <h2 class="skills">技能</h2>
         <ol class="skillList clearfix">
             <li>
@@ -203,135 +162,35 @@
             </li>
         </ol>
     </section>
-    <section data-x id="siteWorks" class="workSection"> 
+    <section data-x id="siteWorks" class="workSection">
         <h2 class="works">作品集</h2>
-        <nav>
-            <ol class="workList clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生JS&amp;CSS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bar-inner"></div>
-            </div>
-        </nav>
-        <script>
-            portfolio1.onclick= function(){
-                portfolioBar.className = 'bar state-1'
-            }
-            portfolio2.onclick= function(){
-                portfolioBar.className = 'bar state-2'
-            }
-            portfolio3.onclick= function(){
-                portfolioBar.className = 'bar state-3'
-            }
-        </script>
         <div class="workPic">
-            <div class="firstPic" style="top: 0; left: 0;">
-                <img src="./img/1.jpg" alt="1">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img class="swiper-slide" src="./img/1.jpg" alt="1">
+                    <img class="swiper-slide" src="./img/2.jpg" alt="2">
+                    <img class="swiper-slide" src="./img/3.jpg" alt="3">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="secondPic" style="top: 0; left: 645px;">
-                <img src="./img/2.jpg" alt="2">
-            </div>
-            <div class="thirdPic" style="top: 312px; left: 645px;">
-                <img src="./img/3.jpg" alt="3">
-            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.2/js/swiper.min.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/sticky-topBar.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
     <script>
         loading.classList.remove('active')
-
-        let specialTags = document.querySelectorAll('[data-x]')
-        for(let i=0; i<specialTags.length; i++){
-            specialTags[i].classList.add('offset')
-        }
-        highLight()
-        //窗口滚动
-        window.onscroll = function(){
-            if(scrollY>0){
-                topNavBar.classList.add('sticky')
-            }else{
-                topNavBar.classList.remove('sticky')
-            }
-            highLight()
-        }
-
-        function highLight(){
-            let specialTags = document.querySelectorAll('[data-x]')
-            let minIndex = 0
-            //let changeTag = 0
-            for(let i=0; i<specialTags.length; i++){
-                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-                    minIndex = i
-                }
-            }
-            let id = specialTags[minIndex].id
-            let a = document.querySelector('a[href="#' + id + '"]')
-            let li = a.parentNode
-            let brothers = li.parentNode.children
-            for(let i=0; i<brothers.length; i++){
-                brothers[i].classList.remove('highLight')
-            }
-            li.classList.add('highLight')
-            specialTags[minIndex].classList.remove('offset')
-        }
-
-        let liTags = document.querySelectorAll('nav.menu > ul > li')
-        for(let i=0; i<liTags.length; i++){
-            liTags[i].onmouseenter = function(x){
-                x.currentTarget.classList.add('active')
-            }
-            liTags[i].onmouseleave = function(x){
-                x.currentTarget.classList.remove('active')
-            }
-        }
-        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-        for(let i=0; i<aTags.length; i++){
-            aTags[i].onclick = function(x){
-                x.preventDefault()
-                let a = x.currentTarget
-                let href = a.getAttribute('href')                
-                let element = document.querySelector(href)
-                let top = element.offsetTop
-                //window.scrollTo(0, top - 80)
-                var currentPostion = window.scrollY
-                var targetPostion = top - 80;
-                // var n = 30 //移动次数
-                // var scrollTime = 500 / n  //每次移动的时间
-                // var scrollSpace = (targetPostion - currentPostion)/n //每次移动的距离
-                // var i = 0
-                // var id = setInterval( ()=>{
-                //     if(i===n){
-                //         window.clearInterval(id)
-                //         return
-                //     }
-                //     i = i + 1
-                //     window.scrollTo(0, currentPostion + scrollSpace*i)
-                // }, scrollTime)
-
-                //Tween.js
-                function animate(time) {
-                    requestAnimationFrame(animate);
-                    TWEEN.update(time);
-                }
-                requestAnimationFrame(animate);
-                
-                var s = targetPostion - currentPostion
-                var t = Math.abs(s / 100) * 300
-                if(t > 500){
-                    t = 500
-                }
-                var coords = { y: currentPostion }; // Start at (0, 0)
-                var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-                    .to({ y: targetPostion }, t) // Move to (300, 200) in 1 second.
-                    .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
-                    .onUpdate(function () {
-                        window.scrollTo(0, coords.y)
-                    })
-                    .start(); // Start the tween immediately.
-            }
-        }
     </script>
 </body>
+
 </html>
