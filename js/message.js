@@ -1,27 +1,27 @@
-!function(){
+! function () {
 
     var view = document.querySelector('.messageSection')
 
     var model = {
-        init: function(){
+        init: function () {
             var APP_ID = 'uDro3VECkNBjLGoMRwiCrFcw-gzGzoHsz';
             var APP_KEY = 'aauMJImqqikhhC4cW8apJCrR';
-            
+
             AV.init({
                 appId: APP_ID,
                 appKey: APP_KEY
             });
         },
         //获取数据
-        fetch: function(){
+        fetch: function () {
             var query = new AV.Query('Message');
             return query.find() //Promise对象
         },
         //创建数据
-        save: function(name, content){
+        save: function (name, content) {
             var Message = AV.Object.extend('Message');
             var message = new Message();
-            return message.save({   //Promise对象
+            return message.save({ //Promise对象
                 'name': name,
                 'content': content
             })
@@ -33,7 +33,7 @@
         model: null,
         form: null,
         messageList: null,
-        init: function(view, model){
+        init: function (view, model) {
             this.view = view
             this.model = model
             this.model.init()
@@ -42,7 +42,7 @@
             this.loadMessages()
             this.bindEvents()
         },
-        loadMessages: function(){
+        loadMessages: function () {
             this.model.fetch().then(
                 (messages) => {
                     let array = messages.map((item) => item.attributes)
@@ -54,8 +54,8 @@
                 }
             )
         },
-        saveMessages: function(){
-            
+        saveMessages: function () {
+
             var myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
@@ -67,8 +67,8 @@
                 myForm.querySelector('input[name=content]').value = ''
             })
         },
-        bindEvents: function(){
-            this.form.addEventListener('submit', (e)=> {
+        bindEvents: function () {
+            this.form.addEventListener('submit', (e) => {
                 e.preventDefault()
                 this.saveMessages()
             })
@@ -76,20 +76,5 @@
     }
 
     controller.init(view, model)
-    
+
 }.call()
-
-
-
-
-// //创建TestObject表
-// var TestObject = AV.Object.extend('TestObject');
-// //在表中创建一行数据
-// var testObject = new TestObject();
-// //数据内容是words:'Hello World'保存
-// //如果保存成功，则运行alert('')
-// testObject.save({
-//   words: 'Hello World!'
-// }).then(function(object) {
-//   alert('LeanCloud Rocks!');
-// })
